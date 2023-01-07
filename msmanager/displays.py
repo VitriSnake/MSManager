@@ -16,7 +16,7 @@ init()
 def prompt_auto(ask, completion=[]):
     style = Style.from_dict({
     '':          'white',
-    'ask': 'yellow',
+    'ask': 'green bold',
     })
     message = [
         ('class:', '['),
@@ -26,10 +26,10 @@ def prompt_auto(ask, completion=[]):
     ]
     completion = WordCompleter(completion)
     text = prompt(message, style=style, completer=completion)
-
+    return text
 def info(message):
     print('[', end='')
-    print(colored('i', 'yellow', attrs=['bold']), end='')
+    print(colored('i', 'green', attrs=['bold']), end='')
     print('] '+message)
 
 def warning(message):
